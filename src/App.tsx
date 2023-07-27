@@ -6,11 +6,11 @@ import {createContext, useEffect, useState} from "react";
 import * as FirebaseAuthService from "./authService/FirebaseAuthService.ts"
 import {UserData} from "./data/UserData.ts";
 import LoginPage from "./ui/page/LoginPage";
-import ScrollToTop from "./ui/component/ScrollToTop.tsx";
+// import ScrollToTop from "./ui/component/ScrollToTop.tsx";
 import ProductDetailPage from "./ui/page/ProductDetailPage";
 import ShoppingCartPage from "./ui/page/ShoppingCartPage";
 
-export const loginUserContext = createContext<UserData | null | undefined>(undefined);
+export const LoginUserContext = createContext<UserData | null | undefined>(undefined);
 
 export default function App() {
     const [loginUser, setLoginUser] = useState<UserData | null | undefined>(undefined);
@@ -55,10 +55,10 @@ export default function App() {
     ])
 
     return (
-        <loginUserContext.Provider value={loginUser}>
-            <RouterProvider router={router}>
-                <ScrollToTop/>
-            </RouterProvider>
-        </loginUserContext.Provider>
+        <LoginUserContext.Provider value={loginUser}>
+            <RouterProvider router={router} />
+            {/*    <ScrollToTop/>*/}
+            {/*</RouterProvider>*/}
+        </LoginUserContext.Provider>
     )
 }

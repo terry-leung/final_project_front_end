@@ -10,23 +10,39 @@ import {
     TableRow,
     Typography
 } from "@mui/material";
-import Divider from "@mui/material/Divider";
+// import Divider from "@mui/material/Divider";
 import {styled} from "@mui/material/styles";
 import ShoppingCartTableRow from "./ShoppingCartTableRow.tsx";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {CartItemDto} from "../../data/dto/CartItemDto.ts";
-import mockData from "./response.json"
+// import mockData from "./response.json"
 // import React from "react";
+import * as CartItemApi from "../../api/CartItemApi.ts"
+import {useNavigate} from "react-router-dom";
+import {LoginUserContext} from "../../App.tsx";
 
 export default function ShoppingCartTable() {
     const [cartItemDtos, setCartItemDtos] = useState<CartItemDto [] | undefined>(undefined);
+    const navigate = useNavigate();
+    const loginUser = useContext(LoginUserContext);
+
+    const getAllCartItems = async () => {
+        try {
+            const data = await CartItemApi.getAllCartItems();
+            setCartItemDtos(data);
+        } catch (error) {
+            navigate("/error");
+        }
+    }
 
     useEffect( () => {
-        setCartItemDtos(undefined);
-        setTimeout( () => {
-            setCartItemDtos(mockData);
-        }, 3000)
-    }, [])
+        if (loginUser) {
+            setCartItemDtos(undefined);
+            getAllCartItems();
+        } else if (loginUser === null) {
+            navigate(("/login"))
+        }
+    }, [loginUser]);
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
@@ -58,16 +74,17 @@ export default function ShoppingCartTable() {
     //     },
     // }));
 
-    function createData(
-        imageUrl: string,
-        name: string,
-        price: number,
-        quantity: number,
-        stock: number,
-        subtotal: number,
-    ) {
-        return { imageUrl, name, price, quantity, stock, subtotal };
-    }
+    // function createData(
+    //     pid: number,
+    //     imageUrl: string,
+    //     name: string,
+    //     price: number,
+    //     quantity: number,
+    //     stock: number,
+    //     subtotal: number,
+    // ) {
+    //     return {pid, imageUrl, name, price, quantity, stock, subtotal };
+    // }
 
     // let rows = [];
     //
@@ -85,29 +102,24 @@ export default function ShoppingCartTable() {
     // ];
 
     const renderShoppingCartTable = () => {
-        let rows = [];
+        // let rows = [];
         if (cartItemDtos) {
-            rows = cartItemDtos?.map((item) =>
-                createData(item.image_url, item.name, item.price, item.cart_quantity, item.stock,item.price * item.cart_quantity)
-            );
+            // rows = cartItemDtos?.map((item) =>
+            //     createData(item.pid, item.image_url, item.name, item.price, item.cart_quantity, item.stock,item.price * item.cart_quantity)
+            // );
             return (
                 <>
-                    {rows.map((row) => (
-                        <ShoppingCartTableRow key={row.imageUrl} row={row} />
+                    {/*{rows.map((value) => (*/}
+                    {/*    <ShoppingCartTableRow key={value.pid} value={value} />*/}
+                    {/*))}*/}
+                    {cartItemDtos.map((value) => (
+                        <ShoppingCartTableRow key={value.pid} cartItemDto={value} cartItemDtos={cartItemDtos} setCartItemDtos={setCartItemDtos}/>
                     ))}
                 </>
             )
         } else {
-            // {
-            //     rows = [
-            //         createData('', 'No Items' , 0, 0, 0),
-            //     ]
-            // }
             return (
                 <>
-                    {/*{rows.map((row) => (*/}
-                    {/*    <ShoppingCartTableRow key={row.imageUrl} row={row} />*/}
-                    {/*))}*/}
                 </>
             )
         }
@@ -183,7 +195,7 @@ export default function ShoppingCartTable() {
                                 </TableCell>
                                 <TableCell align="center">
                                     <Button variant="contained" size="small" color="error">
-                                        Checkout
+                                        Proceed to checkout
                                     </Button>
                                 </TableCell>
                             </TableRow>

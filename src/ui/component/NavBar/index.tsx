@@ -9,24 +9,24 @@ import SearchIcon from '@mui/icons-material/Search';
 import {
     AppBar,
     IconButton,
-    Typography,
+    // Typography,
     Toolbar,
     InputBase,
-    Drawer,
-    Tabs,
-    Tab,
+    // Drawer,
+    // Tabs,
+    // Tab,
     useTheme,
     useMediaQuery,
     Button, Grid
 } from "@mui/material";
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import * as FirebaseAuthService from "../../../authService/FirebaseAuthService.ts"
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 import MenuTabs from "../MenuTabs.tsx";
 import DrawerMenu from "../DrawerMenu.tsx";
-import {loginUserContext} from "../../../App.tsx";
+import {LoginUserContext} from "../../../App.tsx";
 import ShoppingCartList from "../ShoppingCartList.tsx";
 
 const Search = styled('div')(({ theme }) => ({
@@ -81,7 +81,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export default function NavBar() {
-    const loginUser = useContext(loginUserContext);
+    const loginUser = useContext(LoginUserContext);
 
     const renderLoginContainer = () => {
         if(loginUser) {

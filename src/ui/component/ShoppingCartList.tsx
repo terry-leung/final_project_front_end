@@ -1,20 +1,21 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import {IconButton, Paper, Popper, PopperPlacementType, Typography} from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Divider from "@mui/material/Divider";
+// import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import {useEffect, useState} from "react";
 import {CartItemDto} from "../../data/dto/CartItemDto.ts";
-import mockData from "./response.json"
+// import mockData from "./response.json"
 import {Link} from "react-router-dom";
 import ShoppingCartListItem from "./ShoppingCartListItem.tsx";
-import {toLocaleString} from "localforage";
+// import {toLocaleString} from "localforage";
+import * as CartItemApi from "../../api/CartItemApi.ts"
 
 export default function ShoppingCartList() {
     const [cartItemDtos, setCartItemDtos] = useState<CartItemDto[] | undefined>(undefined);
@@ -22,6 +23,14 @@ export default function ShoppingCartList() {
     const [open, setOpen] = React.useState(false);
     const [placement, setPlacement] = React.useState<PopperPlacementType>();
 
+    const getAllCartItems = async () => {
+        try{
+            const data = await CartItemApi.getAllCartItems();
+            setCartItemDtos(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const handleClick =
         (newPlacement: PopperPlacementType) =>
@@ -138,9 +147,7 @@ export default function ShoppingCartList() {
     useEffect(() => {
         if (open) {
             setCartItemDtos(undefined);
-            setTimeout(() => {
-                setCartItemDtos(mockData);
-            }, 1000)
+            getAllCartItems();
         }
     }, [open]);
 

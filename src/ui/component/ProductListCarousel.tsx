@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import {Component} from "react";
 import Slider from "react-slick";
-import ProductItem from "./ProductItem.tsx";
+// import ProductItem from "./ProductItem.tsx";
 import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
 
 export default class ProductListCarousel extends Component{

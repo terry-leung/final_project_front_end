@@ -2,7 +2,7 @@ import {Avatar, Button, Checkbox, FormControlLabel, Grid, Paper, TextField, Typo
 import React, {useContext, useEffect, useState} from "react";
 import * as FirebaseAuthService from "../../authService/FirebaseAuthService.ts"
 import {useNavigate} from "react-router-dom";
-import {loginUserContext} from "../../App.tsx"
+import {LoginUserContext} from "../../App.tsx"
 import {GoogleLoginButton} from "react-social-login-buttons";
 
 
@@ -24,7 +24,7 @@ export default function LoginForm() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [errorMessage, setErrorMessage] = useState<string>("");
-    const loginUser = useContext(loginUserContext);
+    const loginUser = useContext(LoginUserContext);
 
     const handleEmailOnChange = (event : React.ChangeEvent<HTMLInputElement>) => {
         setEmail(event.currentTarget.value);
