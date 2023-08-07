@@ -197,7 +197,7 @@ export default function NavBar() {
                             <>
                                 <Box>
                                 <Link to="/">
-                                    <img src="/logonew.png" width="125" />
+                                    <img src="logonew.png" width="125" />
                                 </Link>
                                 </Box>
                                 <Box sx={{marginLeft: 'auto'}}>

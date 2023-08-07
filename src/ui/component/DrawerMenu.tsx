@@ -55,7 +55,7 @@ export default function DrawerMenu() {
                     <Link to="/" style={{ width: '80%' }}>
                         <ListItem key="Logo" disablePadding>
                             <ListItemButton>
-                                <img src="/public/logonew.png" width="125" />
+                                <img src="/logonew.png" width="125" />
                             </ListItemButton>
                         </ListItem>
                     </Link>
