@@ -6,7 +6,9 @@ export default function ErrorPage(){
         <>
             <NavBar/>
         <Typography>
-            Error
+            <h5>
+            Sorry customer. Something wrong here.
+            </h5>
         </Typography>
         </>
     )

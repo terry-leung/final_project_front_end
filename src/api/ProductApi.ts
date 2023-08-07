@@ -19,7 +19,7 @@ export async function getAllProduct() {
 
 export async function getProductDetail(pid: string) {
     try {
-        const response = await axios.get<ProductDetailDto[]>(`${baseUrl}/public/product/${pid}`);
+        const response = await axios.get<ProductDetailDto>(`${baseUrl}/public/product/${pid}`);
         return response.data;
     } catch (error) {
         console.error(error);

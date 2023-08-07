@@ -29,25 +29,21 @@ export default function ProductDetailForm({productDetailData} : Props) {
     }
 
     const productDetailFormStyle = () => (
-        {padding: "25px 25px 70px 25px",
+        {padding: "50px 25px 70px 25px",
             width: 280,
             position: "relative",
-            margin: "auto",
+            marginTop: 8,
         });
 
     return (
         <>
-            <Grid
-                // container
-                // spacing={0}
-                // direction="column"
-                // alignItems="center"
-                // justifyContent="center"
-                // minHeight="100vh"
-            >
-                <Grid container spacing={2} sx={{ height: '100%' }}>
-                    <Grid item xs={3}>
-                        <img src={productDetailData?.image_url} /><br/>
+            <Grid>
+                <Grid container spacing={2} sx={{ maxWidth: 2000 , margin: 'auto'}}>
+                    <Grid item xs={4}>
+                        <img src={productDetailData?.image_url}
+                             style={{ maxWidth: '100%', height: 'auto', marginTop: 20}}
+                        alt=""
+                        /><br/>
                     </Grid>
                     <Grid item>
                         <Divider orientation="vertical" sx={{ height: '100%' }} />

@@ -11,16 +11,16 @@ export default function ProductItem(props: Props) {
     return (
         <Card onClick={() => {
             navigate(`product/${props.dto.pid}`);
-        }} sx={{ maxWidth: 345 , borderRadius: 8}}>
-            <CardActionArea sx={{borderRadius: 0}}>
+        }} sx={{ maxWidth: 345 , height: '100%', borderRadius: 6, display: 'flex', flexDirection: 'column'}}>
+            <CardActionArea sx={{flexGrow: 1, borderRadius: 0}}>
                 <CardMedia
                     component="img"
-                    height="350"
+                    height="300"
                     image={`.${props.dto.image_url}`}
                     alt=""
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h6" component="div">
                         {props.dto.name}
                     </Typography>
                     {/*<Typography variant="body2" color="text.secondary">*/}
@@ -29,10 +29,30 @@ export default function ProductItem(props: Props) {
                     {/*</Typography>*/}
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Share
+            <CardActions sx={{
+                justifyContent: 'space-between'}}>
+                <div>
+                <Button variant="contained" size="small" color="error">
+                    More
                 </Button>
+                </div>
+                <div>
+                    {
+                        props.dto.has_stock ? (
+                            <>
+                                <Typography variant="body2" color="text.secondary">
+                                    In stock !
+                                </Typography>
+                            </>
+                        ) : (
+                            <>
+                                <Typography variant="body2" color="text.secondary">
+                                    Out of stock
+                                </Typography>
+                            </>
+                        )
+                    }
+                </div>
             </CardActions>
         </Card>
     );

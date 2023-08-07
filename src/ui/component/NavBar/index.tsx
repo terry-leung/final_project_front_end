@@ -87,7 +87,9 @@ export default function NavBar() {
         if(loginUser) {
             return (
                 <>
+                <Box sx={{ color: 'black', padding: '10px', display: 'flex', alignItems: 'center' }}>
                     {loginUser.email}
+                </Box>
                         {
                             isMatchMd ? (
                                 <>
@@ -121,7 +123,9 @@ export default function NavBar() {
         } else if (loginUser === null) {
             return (
                 <>
+                    <Box sx={{ color: 'black', padding: '10px', display: 'flex', alignItems: 'center' }}>
                     PleaseLogin
+                    </Box>
                 <Link to="/login">
                 {
                     isMatchMd ? (
@@ -129,11 +133,8 @@ export default function NavBar() {
                             size="large"
                             edge="end"
                             aria-label="account of current user"
-                            // aria-controls={menuId}
                             aria-haspopup="true"
-                            // onClick={handleProfileMenuOpen}
                             color="secondary"
-                            // sx={{color:'#000000'}}
                         >
                             <AccountCircle/>
                         </IconButton>
@@ -187,7 +188,7 @@ export default function NavBar() {
                                         </>
                                     ) : (
                                         <Link to="/">
-                                            <img src="/public/logo.svg" width="125" />
+                                            <img src="/public/logonew.png" width="125" />
                                         </Link>
                                     )
                                 }
@@ -196,7 +197,7 @@ export default function NavBar() {
                             <>
                                 <Box>
                                 <Link to="/">
-                                    <img src="/public/logo.svg" width="125" />
+                                    <img src="/public/logonew.png" width="125" />
                                 </Link>
                                 </Box>
                                 <Box sx={{marginLeft: 'auto'}}>

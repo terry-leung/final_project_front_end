@@ -4,6 +4,7 @@ import * as FirebaseAuthService from "../../authService/FirebaseAuthService.ts"
 import {useNavigate} from "react-router-dom";
 import {LoginUserContext} from "../../App.tsx"
 import {GoogleLoginButton} from "react-social-login-buttons";
+import Box from "@mui/material/Box";
 
 
 export default function LoginForm() {
@@ -72,7 +73,7 @@ export default function LoginForm() {
             marginTop="calc(2% + 7vh)"
         >
                 <Paper elevation={10} sx={loginFormStyle()}>
-                    <form onSubmit={handleSubmit}>
+                    <Box component="form" onSubmit={handleSubmit}>
                     <Grid>
                         <Avatar>A</Avatar>
                         <Typography><h3>Sign in</h3></Typography>
@@ -93,7 +94,7 @@ export default function LoginForm() {
                     <Button sx={{marginTop: 2, marginBottom: 1}} type='submit' color='primary' variant="contained" fullWidth>Sign in</Button>
                     <hr/>
                     <GoogleLoginButton onClick={handleGoogleSignin} fullWidth />
-                    </form>
+                    </Box>
                 </Paper>
         </Grid>
     )

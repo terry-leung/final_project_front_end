@@ -35,6 +35,7 @@ export default function ProductDetailPage() {
 
     const renderProductDetailPage = () => {
         if (productDetailData) {
+            document.title = "Harmony Haven - " + productDetailData.name;
             return (
                 <ProductDetailForm productDetailData={productDetailData}/>
             )

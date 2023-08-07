@@ -55,7 +55,7 @@ export default function DrawerMenu() {
                     <Link to="/" style={{ width: '80%' }}>
                         <ListItem key="Logo" disablePadding>
                             <ListItemButton>
-                                <img src="/public/logo.svg" width="125" />
+                                <img src="/public/logonew.png" width="125" />
                             </ListItemButton>
                         </ListItem>
                     </Link>
@@ -65,7 +65,6 @@ export default function DrawerMenu() {
                     <ListItem key="ProductListing" disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
-                                {/*<StarIcon />*/}
                             </ListItemIcon>
                             <ListItemText primary="Product" />
                         </ListItemButton>
@@ -74,7 +73,6 @@ export default function DrawerMenu() {
                 <ListItem key="Send email" disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
-                            {/*<MailIcon />*/}
                         </ListItemIcon>
                         <ListItemText primary="Send email" />
                     </ListItemButton>
@@ -82,9 +80,8 @@ export default function DrawerMenu() {
                 <ListItem key="Drafts" disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
-                            {/*<MailIcon />*/}
                         </ListItemIcon>
-                        <ListItemText primary="Drafts" />
+                        <ListItemText primary="Contact Us" />
                     </ListItemButton>
                 </ListItem>
             </List>
@@ -95,23 +92,22 @@ export default function DrawerMenu() {
                         <ListItemIcon >
                             <FontAwesomeIcon icon={faUser} size="lg" style={{color: "#001333",}} />
                         </ListItemIcon>
-                        <ListItemText primary="All mail" />
+                        <ListItemText primary="Shopping Cart" />
                     </ListItemButton>
                 </ListItem>
-                <ListItem key="Trash" disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            {/*<MailIcon />*/}
-                        </ListItemIcon>
-                        <ListItemText primary="Trash" />
-                    </ListItemButton>
-                </ListItem>
+                {/*<ListItem key="Trash" disablePadding>*/}
+                {/*    <ListItemButton>*/}
+                {/*        <ListItemIcon>*/}
+                {/*            /!*<MailIcon />*!/*/}
+                {/*        </ListItemIcon>*/}
+                {/*        <ListItemText primary="Trash" />*/}
+                {/*    </ListItemButton>*/}
+                {/*</ListItem>*/}
                 <ListItem key="Spam" disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
-                            {/*<MailIcon />*/}
                         </ListItemIcon>
-                        <ListItemText primary="Spam" />
+                        <ListItemText primary="Logout" />
                     </ListItemButton>
                 </ListItem>
             </List>

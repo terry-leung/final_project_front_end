@@ -18,6 +18,7 @@ import {CartItemDto} from "../../data/dto/CartItemDto.ts";
 // import mockData from "./response.json"
 // import React from "react";
 import * as CartItemApi from "../../api/CartItemApi.ts"
+import * as TransactionApi from "../../api/TransactionApi.ts"
 import {useNavigate} from "react-router-dom";
 import {LoginUserContext} from "../../App.tsx";
 
@@ -125,14 +126,23 @@ export default function ShoppingCartTable() {
         }
     }
 
+    const handleCheckout = async () => {
+        try {
+            const transactionData = await TransactionApi.postTransaction();
+            navigate(`/checkout/${transactionData.tid}`);
+        } catch (error) {
+            navigate("/error");
+        }
+    }
+
     return (
         <>
-            <Grid style={{marginTop: 20}}item xs={12}>
+            <Grid style={{marginTop: 50}} item xs={12}>
                 <Typography variant="h5" align="center">Shopping Cart</Typography>
                 <br/>
                 {/*<Divider />*/}
-                <TableContainer component={Paper}>
-                    <Table sx={{ maxWidth: 1500 , margin: 'auto'}} aria-label="customized table">
+                <TableContainer component={Paper} elevation={0}>
+                    <Table sx={{ maxWidth: 1300 , margin: 'auto'}} aria-label="customized table">
                         <TableHead>
                             <TableRow>
                                 <StyledTableCell align="center">Product</StyledTableCell>
@@ -194,7 +204,7 @@ export default function ShoppingCartTable() {
                                     </Typography>
                                 </TableCell>
                                 <TableCell align="center">
-                                    <Button variant="contained" size="small" color="error">
+                                    <Button onClick={handleCheckout} variant="contained" size="small" color="error">
                                         Proceed to checkout
                                     </Button>
                                 </TableCell>
