@@ -1,20 +1,13 @@
 import NavBar from "../../component/NavBar";
 import './style.css'
-// import {useLocation} from "react-router-dom";
 import ProductItem from "../../component/ProductItem.tsx";
-// import mockData from "./response.json"
 import {useEffect, useState} from "react";
 import {ProductListDto} from "../../../data/dto/ProductListDto.ts";
 import axios from "axios";
 import LoadingContainer from "../../component/LoadingContainer.tsx";
-// import {Container} from "@mui/material";
-// import Box from "@mui/material/Box";
-// import AdvertisingBanner from "../../component/AdvertisingBanner.tsx";
 import * as ProductApi from "../../../api/ProductApi.ts"
 import {useNavigate} from "react-router-dom";
-import {Container, Grid, Paper, TableContainer} from "@mui/material";
-// import ProductListCarousel from "../../component/ProductListCarousel.tsx";
-// import * as FirebaseAuthService from "./authService/FirebaseAuthService.ts"
+import {Grid} from "@mui/material";
 
 export default function ProductListingPage() {
     const [productListData, setProductListData] = useState<ProductListDto[] | undefined>(undefined);
