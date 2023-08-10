@@ -77,7 +77,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-// type Anchor = 'left';
 
 
 export default function NavBar() {
@@ -214,11 +213,6 @@ export default function NavBar() {
                         <SearchIconWrapper sx={{color: 'black'}}>
                             <SearchIcon />
                         </SearchIconWrapper>
-                        {/*<StyledInputBase*/}
-                        {/*    placeholder="Search…"*/}
-                        {/*    inputProps={{ 'aria-label': 'search' }}*/}
-                        {/*    // sx={{minWidth: 150}}*/}
-                        {/*/>*/}
                         {
                             isMatchSm ? (
                                 <StyledInputBase
@@ -254,7 +248,6 @@ export default function NavBar() {
                         }
                     </Search>
                     </Box>
-                    {/*<Box sx={{ flexGrow: 2 }} />*/}
                     <Box sx={{display:'flex',marginLeft: 'auto'}}>
                         {
                             renderLoginContainer()
@@ -265,22 +258,3 @@ export default function NavBar() {
 </Grid>
     );
 }
-        // <nav>
-        //     <ul>
-        //         <li>
-        //             <Link to="/">Product Listing Page</Link>
-        //         </li>
-        //         <li>
-        //             <Link to="/product/1/99">Product Detail Page</Link>
-        //         </li>
-        //         <li>
-        //             <Link to="/shoppingcart">Shopping Cart Page</Link>
-        //         </li>
-        //         <li>
-        //             <Link to="/checkout/1">Checkout Page</Link>
-        //         </li>
-        //         <li>
-        //             <Link to="/thankyou">Thank You Page</Link>
-        //         </li>
-        //     </ul>
-        // </nav>

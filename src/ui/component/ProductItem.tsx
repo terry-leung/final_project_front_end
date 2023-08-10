@@ -11,29 +11,28 @@ export default function ProductItem(props: Props) {
     return (
         <Card onClick={() => {
             navigate(`product/${props.dto.pid}`);
-        }} sx={{ maxWidth: 345 , height: '100%', borderRadius: 6, display: 'flex', flexDirection: 'column'}}>
+        }} sx={{ maxWidth: 400 , height: '100%', borderRadius: 6, display: 'flex', flexDirection: 'column'}}>
             <CardActionArea sx={{flexGrow: 1, borderRadius: 0}}>
+                <div style={{ position: 'relative', height: 115, paddingTop: '56.25%' }}>
                 <CardMedia
                     component="img"
-                    height="300"
+                    height="500"
                     image={`.${props.dto.image_url}`}
                     alt=""
+                    style={{ padding: 0, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                <CardContent>
+                </div>
+                <CardContent sx={{ flexGrow: 1}}>
                     <Typography gutterBottom variant="h6" component="div">
                         {props.dto.name}
                     </Typography>
-                    {/*<Typography variant="body2" color="text.secondary">*/}
-                    {/*    Lizards are a widespread group of squamate reptiles, with over 6,000*/}
-                    {/*    species, ranging across all continents except Antarctica*/}
-                    {/*</Typography>*/}
                 </CardContent>
             </CardActionArea>
             <CardActions sx={{
                 justifyContent: 'space-between'}}>
                 <div>
                 <Button variant="contained" size="small" color="error">
-                    More
+                    More Info
                 </Button>
                 </div>
                 <div>

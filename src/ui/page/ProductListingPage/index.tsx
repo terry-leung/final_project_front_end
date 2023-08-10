@@ -20,14 +20,10 @@ export default function ProductListingPage() {
             navigate("/error");
         }
     }
-    // const location = useLocation();
 
     useEffect(() => {
         getProductListData();
 
-        // setTimeout(() => {
-        //     setProductListData(mockData);
-        // }, 3000)
 
         return () => {
             axios.CancelToken.source().cancel();
@@ -61,11 +57,9 @@ export default function ProductListingPage() {
         <Grid>
             <NavBar/>
             <Grid>
-            {/*<AdvertisingBanner/>*/}
                 {
                     renderCards()
                 }
-                {/*<ProductListCarousel/>*/}
             </Grid>
         </Grid>
     )

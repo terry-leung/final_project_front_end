@@ -103,16 +103,9 @@ export default function ShoppingCartTable() {
     // ];
 
     const renderShoppingCartTable = () => {
-        // let rows = [];
         if (cartItemDtos) {
-            // rows = cartItemDtos?.map((item) =>
-            //     createData(item.pid, item.image_url, item.name, item.price, item.cart_quantity, item.stock,item.price * item.cart_quantity)
-            // );
             return (
                 <>
-                    {/*{rows.map((value) => (*/}
-                    {/*    <ShoppingCartTableRow key={value.pid} value={value} />*/}
-                    {/*))}*/}
                     {cartItemDtos.map((value) => (
                         <ShoppingCartTableRow key={value.pid} cartItemDto={value} cartItemDtos={cartItemDtos} setCartItemDtos={setCartItemDtos}/>
                     ))}

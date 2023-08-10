@@ -30,7 +30,6 @@ export default function TransactionTableRow({item}: Props) {
             </TableCell>
             <TableCell align="center">${item.subtotal}</TableCell>
             <TableCell align="center">
-                {/*<IconButton onClick={handleDeleteCartItem} aria-label="delete" size="small" color="inherit"><DeleteForeverIcon/></IconButton>*/}
             </TableCell>
         </StyledTableRow>
     )

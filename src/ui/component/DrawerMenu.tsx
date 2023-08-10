@@ -41,16 +41,12 @@ export default function DrawerMenu() {
         >
             <List>
                 <div style={{ display: 'flex' }}>
-                    {/*<Link to="/" style={{ width: '20%' }}>*/}
                     <ListItem style={{ width: '20%' }} key="Logo" disablePadding>
                         <ListItemButton onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
-                            {/*<ListItemIcon>*/}
                             <FontAwesomeIcon icon={faXmark} size="xl" style={{color: "#001333",}} />
-                            {/*</ListItemIcon>*/}
-                            {/*<img src="/public/logo.svg" width="125" />*/}
+
                         </ListItemButton>
                     </ListItem>
-                    {/*</Link>*/}
 
                     <Link to="/" style={{ width: '80%' }}>
                         <ListItem key="Logo" disablePadding>
@@ -95,14 +91,7 @@ export default function DrawerMenu() {
                         <ListItemText primary="Shopping Cart" />
                     </ListItemButton>
                 </ListItem>
-                {/*<ListItem key="Trash" disablePadding>*/}
-                {/*    <ListItemButton>*/}
-                {/*        <ListItemIcon>*/}
-                {/*            /!*<MailIcon />*!/*/}
-                {/*        </ListItemIcon>*/}
-                {/*        <ListItemText primary="Trash" />*/}
-                {/*    </ListItemButton>*/}
-                {/*</ListItem>*/}
+
                 <ListItem key="Spam" disablePadding>
                     <ListItemButton>
                         <ListItemIcon>

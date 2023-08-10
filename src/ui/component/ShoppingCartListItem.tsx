@@ -3,8 +3,7 @@ import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import {Typography} from "@mui/material";
-// import {Link} from "react-router-dom";
-// import * as React from "react";
+
 
 type Props = {
     data: CartItemDto;

@@ -112,26 +112,6 @@ export default function ProductDetailForm({productDetailData} : Props) {
                         </Paper>
                     </Grid>
                 </Grid>
-                    {/*<Grid>*/}
-                    {/*    <Avatar>A</Avatar>*/}
-                    {/*    <Typography><h3>Sign in</h3></Typography>*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item xs={6}></Grid>*/}
-                    {/*<TextField sx={{paddingBottom: 3}} label='Email' placeholder='Enter Email Address' onChange={handleEmailOnChange} fullWidth required/>*/}
-                    {/*<TextField sx={{paddingBottom: 2}} label='Password' placeholder='Enter password' type='password' onChange={handlePasswordOnChange} fullWidth required/>*/}
-                    {/*<FormControlLabel*/}
-                    {/*    control={*/}
-                    {/*        <Checkbox*/}
-                    {/*            name="checkedB"*/}
-                    {/*            color="primary"*/}
-                    {/*        />*/}
-                    {/*    }*/}
-                    {/*    label="Remember me"*/}
-                    {/*/>*/}
-                    {/*<Button sx={{marginTop: 2}} type='submit' color='primary' variant="contained" fullWidth>Sign in</Button>*/}
-                    {/*/!*<Typography>*!/*/}
-                    {/*/!*    *!/*/}
-                    {/*/!*</Typography>*!/*/}
 
             </Grid>
         </>

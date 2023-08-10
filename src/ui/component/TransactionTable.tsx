@@ -69,12 +69,11 @@ export default function TransactionTable() {
         if (transactionDto) {
             return (
                 <>
-                    {/*{rows.map((value) => (*/}
-                    {/*    <ShoppingCartTableRow key={value.pid} value={value} />*/}
-                    {/*))}*/}
-                    {transactionDto.items.map((value) => (
+                    {
+                        transactionDto.items.map((value) => (
                         <TransactionTableRow key={value.tpid} item={value} />
-                    ))}
+                    ))
+                    }
                 </>
             )
         } else {
